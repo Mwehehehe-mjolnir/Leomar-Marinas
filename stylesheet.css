@@ -1,0 +1,464 @@
+/* ==========================================================================
+   Colors live here. Change them to restyle the whole site.
+   ========================================================================== */
+:root {
+ background-image: url(bg9.avif);
+ background-repeat: space;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+  --card: #161b26;
+  --line: #252c3b;
+  --text: #cfd5df;
+  --muted: #1e48a2;
+  --blue: #5b8cff;
+  --purple: #1688bc;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 "Source Sans 3", system-ui, sans-serif;
+  animation: rise 2s ease both;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Sora, system-ui, sans-serif;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+a {
+  color: var(--blue);
+}
+
+:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 5vw;
+  background: rgba(13, 16, 23, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font: 700 1.1rem Sora, sans-serif;
+  color: var(--text);
+  text-decoration: none;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 1.2rem;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font: inherit;
+}
+
+/* ==========================================================================
+   Sections & Titles
+   ========================================================================== */
+section {
+  padding: 4.5rem 5vw;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.9rem;
+  border-left: 4px solid var(--text);
+  padding-left: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 85vh;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hero h2 {
+  font-size: 1.4rem;
+  background-color: rgb(52, 143, 192);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid rgb(50, 140, 190);
+  color: rgb(52, 143, 192);
+  padding: 0.15rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.95rem;
+}
+
+.photo {
+  aspect-ratio: 1;
+  border-radius: 80%;
+  border-style: groove;
+  display: var(--line);
+  place-items: center;
+  text-align: center;
+  border-color: rgb(0, 115, 130);
+  background: var(--card);
+  max-width: 300px;
+  width: 100%;
+  justify-self: center;
+  object-fit: cover;
+  animation: rise 3s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btns {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1.4rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  background: transparent;
+  font: 600 1rem "Source Sans 3", sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.btn:hover {
+  border-color: var(--blue);
+}
+
+.btn.primary {
+  background: linear-gradient(30deg, var(--text), var(--card));
+  border: 0;
+  color: #fff;
+}
+
+.btn.small {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  margin-right: 0.4rem;
+}
+
+/* ==========================================================================
+   Chips, Lists & Layout Helpers
+   ========================================================================== */
+.chips,
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 0.2rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+.list li {
+  padding: 0.3rem 0;
+  color: rgb(52, 143, 192);
+  font-style: oblique;
+}
+
+.contact-list li {
+  color: var(--text);
+ 
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  color: rgb(240, 253, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+/* ==========================================================================
+   Cards & Small Text
+   ========================================================================== */
+.card {
+  background-color: rgb(0, 18, 23);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.3rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+.note {
+  color: rgb(217, 223, 223);
+  margin-top: -0.8rem;
+}
+
+.center {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.tag {
+  font-size: 0.85rem;
+  color: var(--purple);
+}
+
+.tech {
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   Skills
+   ========================================================================== */
+.skill {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  color: var(--text);
+}
+
+.skill span:last-child {
+  color: var(--purple);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Timeline
+   ========================================================================== */
+.timeline {
+  border-left: 2px solid var(--line);
+  margin-left: 0.5rem;
+  padding-left: 1.6rem;
+  color: rgb(235, 240, 240);
+  
+}
+
+.step {
+  position: relative;
+  margin-bottom: 1.5rem;
+  background: #001017;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  left: -2.1rem;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.step.current {
+  border-color: var(--purple);
+}
+
+.step.current::before {
+  background: var(--purple);
+}
+
+.now {
+  display: inline-block;
+  background: var(--purple);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.1rem 0.7rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.step ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+  columns: 2;
+  color: var(--muted);
+  color: rgb(19, 136, 183);
+}
+
+/* ==========================================================================
+   Contact Form
+   ========================================================================== */
+form label {
+  display: block;
+  margin-bottom: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.6rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  font: inherit;
+}
+
+#formStatus {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 2.5rem 5vw;
+  border-top: 1px solid var(--line);
+  color: var(--text);
+}
+
+footer p {
+  margin: 0.2rem 0;
+}
+
+/* ==========================================================================
+   Responsive (mobile)
+   ========================================================================== */
+@media (max-width: 800px) {
+  .hero,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 0;
+    padding-top: 2.5rem;
+  }
+
+  .photo {
+    order: -1;
+    max-width: 220px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 0.5rem 5vw;
+  }
+
+  nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 0.6rem 0;
+  }
+
+  .step ul {
+    columns: 1;
+  }
+}
+
+/* ==========================================================================
+   Accessibility: reduced motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .photo {
+    animation: none;
+  }
+}
